@@ -1,0 +1,25 @@
+<div class="container" *ngIf="pages.length > 0" >
+    <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Word Count</th>
+            <th>Time Stamp</th>
+            <th>Snippit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let page of pages">
+            <td>
+              <a [href]="'https://en.wikipedia.org?curid=' + page.pageid"
+                >{{ page.title }}</a
+              >
+            </td>
+            <td>{{ page.wordcount }}</td>
+            <td>{{ page.timestamp }}</td>
+            <td [innerHTML]="page.snippet"></td>
+          </tr>
+        </tbody>
+      </table>
+      
+</div>
